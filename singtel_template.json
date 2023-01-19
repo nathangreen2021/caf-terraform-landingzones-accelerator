@@ -1021,7 +1021,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
             "name": "[variables('deploymentNames').mgmtGroupDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -1040,7 +1040,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
             "name": "[variables('deploymentNames').roleDefsDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtGroupDeploymentName)]",
@@ -1062,7 +1062,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
             "name": "[variables('deploymentNames').policyDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtGroupDeploymentName)]",
@@ -1086,7 +1086,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[concat('preparingToLaunch', copyIndex())]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
             "dependsOn": [
                 "[variables('deploymentNames').policyDeploymentName]"
@@ -1117,7 +1117,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').mgmtSubscriptionPlacement]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "scope": "[variables('scopes').managementManagementGroup]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtGroupDeploymentName)]"
@@ -1144,7 +1144,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').connectivitySubscriptionPlacement]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "scope": "[variables('scopes').connectivityManagementGroup]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtGroupDeploymentName)]"
@@ -1171,7 +1171,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').identitySubscriptionPlacement]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "scope": "[variables('scopes').identityManagementGroup]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtGroupDeploymentName)]"
@@ -1201,7 +1201,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').monitoringDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "subscriptionId": "[parameters('managementSubscriptionId')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
@@ -1221,13 +1221,13 @@
                         "value": "[variables('platformResourceNames').logAnalyticsWorkspace]"
                     },
                     "workspaceRegion": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     },
                     "automationAccountName": {
                         "value": "[variables('platformResourceNames').automationAccount]"
                     },
                     "automationRegion": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     },
                     "retentionInDays": {
                         "value": "[parameters('retentionInDays')]"
@@ -1241,7 +1241,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').monitoringSolutionsDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "subscriptionId": "[parameters('managementSubscriptionId')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]",
@@ -1261,7 +1261,7 @@
                         "value": "[variables('platformResourceNames').logAnalyticsWorkspace]"
                     },
                     "workspaceRegion": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     },
                     "enableSecuritySolution": {
                         "value": "[parameters('enableSecuritySolution')]"
@@ -1300,7 +1300,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').logAnalyticsPolicyDeploymentName]",
             "scope": "[variables('scopes').managementManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
                 "policyCompletion"
@@ -1322,13 +1322,13 @@
                         "value": "[variables('platformResourceNames').logAnalyticsWorkspace]"
                     },
                     "workspaceRegion": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     },
                     "automationAccountName": {
                         "value": "[variables('platformResourceNames').automationAccount]"
                     },
                     "automationRegion": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     },
                     "retentionInDays": {
                         "value": "[parameters('retentionInDays')]"
@@ -1343,7 +1343,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').asbPolicyDeploymentName]",
             "scope": "[variables('scopes').eslzRootManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
                 "policyCompletion",
@@ -1366,7 +1366,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').resourceDiagnosticsPolicyDeploymentName]",
             "scope": "[variables('scopes').eslzRootManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLitedeploymentNames').platformLiteSubscriptionPlacement)]",
@@ -1396,7 +1396,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').activityDiagnosticsPolicyDeploymentName]",
             "scope": "[variables('scopes').eslzRootManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').monitoringLiteDeploymentName)]"
@@ -1424,7 +1424,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').ascPolicyDeploymentName]",
             "scope": "[variables('scopes').eslzRootManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').monitoringLiteDeploymentName)]"
@@ -1488,7 +1488,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').ascGovPolicyDeploymentName]",
             "scope": "[variables('scopes').eslzRootManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').monitoringLiteDeploymentName)]"
@@ -1540,7 +1540,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').ddosRgDeploymentName]",
             "subscriptionId": "[parameters('connectivitySubscriptionId')]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').connectivitySubscriptionPlacement)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').activityDiagnosticsPolicyDeploymentName)]",
@@ -1601,7 +1601,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').ddosHubPolicyDeploymentName]",
             "scope": "[variables('scopes').connectivityManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').ddosDeploymentName)]"
             ],
@@ -1640,7 +1640,7 @@
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').ascGovPolicyDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').ddosDeploymentName)]"
             ],
-            "location": ["eastus"],
+            "location": "[eastus]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -1730,7 +1730,7 @@
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').ascGovPolicyDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').ddosDeploymentName)]"
             ],
-            "location": ["eastus"],
+            "location": "[eastus]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -1805,7 +1805,7 @@
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').ascGovPolicyDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').ddosDeploymentName)]"
             ],
-            "location": ["eastus"],
+            "location": "[eastus]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -1862,7 +1862,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').privateDnsZoneRgDeploymentName]",
             "subscriptionId": "[parameters('connectivitySubscriptionId')]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').connectivitySubscriptionPlacement)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').activityDiagnosticsPolicyDeploymentName)]",
@@ -1936,7 +1936,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').azOpsRbacDeploymentName]",
             "scope": "[variables('scopes').eslzRootManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').platformLiteSubscriptionPlacement)]"
@@ -1964,7 +1964,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').azOpsRgDeploymentName]",
             "subscriptionId": "[variables('azOpsSubscriptionId')]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').azOpsRbacDeploymentName)]",
@@ -1981,7 +1981,7 @@
                         "value": "[variables('platformRgNames').azOpsRg]"
                     },
                     "location": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     }
                 }
             }
@@ -2051,7 +2051,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
             "name": "[variables('deploymentNames').privateDnsPolicyDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "scope": "[variables('scopes').corpManagementGroup]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtGroupDeploymentName)]",
@@ -2089,7 +2089,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
             "name": "[variables('deploymentNames').dnsZoneRoleAssignmentDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "subscriptionId": "[variables('singleVsDedicatedConnectivitySub')]",
             "dependsOn": [
                 "[variables('deploymentNames').privateDnsPolicyDeploymentName]"
@@ -2120,7 +2120,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').azVmMonitorPolicyDeploymentName]",
             "scope": "[variables('scopes').eslzRootManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]"
             ],
@@ -2150,7 +2150,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').azVmssMonitorPolicyDeploymentName]",
             "scope": "[variables('scopes').eslzRootManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]"
             ],
@@ -2180,7 +2180,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').azBackupLzPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2207,7 +2207,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').ddosLzPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').ddosDeploymentName)]"
             ],
@@ -2237,7 +2237,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').databricksPipDeploymentName]",
             "scope": "[variables('scopes').corpManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2264,7 +2264,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').databricksSkuDeploymentName]",
             "scope": "[variables('scopes').corpManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2291,7 +2291,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').databricksVnetDeploymentName]",
             "scope": "[variables('scopes').corpManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2318,7 +2318,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').azPolicyForAksPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2345,7 +2345,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').aksPrivEscalationPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2369,7 +2369,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').aksPrivilegedPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2393,7 +2393,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').aksHttpsPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2417,7 +2417,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').tlsSslPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2444,7 +2444,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').ipFwPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2468,7 +2468,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').publicEndpointPolicyDeploymentName]",
             "scope": "[variables('scopes').corpManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2495,7 +2495,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').rdpFromInternetPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2522,7 +2522,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').storageHttpsPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2546,7 +2546,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').subnetNsgPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2573,7 +2573,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').sqlAuditPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2600,7 +2600,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').sqlEncryptionPolicyDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2630,7 +2630,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').azBackupIdentityPolicyDeploymentName]",
             "scope": "[variables('scopes').identityManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion"
             ],
@@ -2657,7 +2657,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').pipPolicyDeploymentName]",
             "scope": "[variables('scopes').identityManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').identitySubscriptionPlacement)]"
@@ -2682,7 +2682,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').subnetNsgIdentityPolicyDeploymentName]",
             "scope": "[variables('scopes').identityManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').identitySubscriptionPlacement)]"
@@ -2710,7 +2710,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').rdpFromInternetIdentityPolicyDeploymentName]",
             "scope": "[variables('scopes').identityManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').identitySubscriptionPlacement)]"
@@ -2835,7 +2835,7 @@
             "apiVersion": "2020-10-01",
             "name": "[concat(variables('deploymentNames').onlineLzSubs, copyIndex())]",
             "scope": "[variables('scopes').onlineManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').policyDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').activityDiagnosticsPolicyDeploymentName)]",
@@ -2870,7 +2870,7 @@
             "apiVersion": "2020-10-01",
             "name": "[concat(variables('deploymentNames').corpLzSubs, copyIndex())]",
             "scope": "[variables('scopes').corpManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').policyDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').activityDiagnosticsPolicyDeploymentName)]",
@@ -2905,7 +2905,7 @@
             "apiVersion": "2020-10-01",
             "name": "[concat(variables('deploymentNames').corpConnectedMoveLzSubs, copyIndex())]",
             "scope": "[variables('scopes').corpManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').policyDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').activityDiagnosticsPolicyDeploymentName)]",
@@ -3058,7 +3058,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
             "name": "[variables('esLiteDeploymentNames').mgmtGroupLiteDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -3081,7 +3081,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('esLiteDeploymentNames').platformLiteSubscriptionPlacement]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "scope": "[variables('scopes').platformManagementGroup]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').mgmtGroupLiteDeploymentName)]"
@@ -3111,7 +3111,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('esLiteDeploymentNames').monitoringLiteDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "subscriptionId": "[parameters('singlePlatformSubscriptionId')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('esliteDeploymentNames').platformLiteSubscriptionPlacement)]",
@@ -3131,13 +3131,13 @@
                         "value": "[variables('platformResourceNames').logAnalyticsWorkspace]"
                     },
                     "workspaceRegion": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     },
                     "automationAccountName": {
                         "value": "[variables('platformResourceNames').automationAccount]"
                     },
                     "automationRegion": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     },
                     "retentionInDays": {
                         "value": "[parameters('retentionInDays')]"
@@ -3154,7 +3154,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('esLiteDeploymentNames').monitoringSolutionsLiteDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "subscriptionId": "[parameters('singlePlatformSubscriptionId')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').monitoringLiteDeploymentName)]",
@@ -3174,7 +3174,7 @@
                         "value": "[variables('platformResourceNames').logAnalyticsWorkspace]"
                     },
                     "workspaceRegion": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     },
                     "enableSecuritySolution": {
                         "value": "[parameters('enableSecuritySolution')]"
@@ -3216,7 +3216,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('esLiteDeploymentNames').logAnalyticsLitePolicyDeploymentName]",
             "scope": "[variables('scopes').platformManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').monitoringLiteDeploymentName)]",
                 "policyCompletion"
@@ -3238,13 +3238,13 @@
                         "value": "[variables('platformResourceNames').logAnalyticsWorkspace]"
                     },
                     "workspaceRegion": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     },
                     "automationAccountName": {
                         "value": "[variables('platformResourceNames').automationAccount]"
                     },
                     "automationRegion": {
-                        "value": "["eastus"]"
+                        "value": ""[eastus]""
                     },
                     "retentionInDays": {
                         "value": "[parameters('retentionInDays')]"
@@ -3262,7 +3262,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('esLiteDeploymentNames').ddosRgLiteDeploymentName]",
             "subscriptionId": "[parameters('singlePlatformSubscriptionId')]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').platformLiteSubscriptionPlacement)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').activityDiagnosticsPolicyDeploymentName)]",
@@ -3325,7 +3325,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('esLitedeploymentNames').privateDnsZoneRgLiteDeploymentName]",
             "subscriptionId": "[parameters('singlePlatformSubscriptionId')]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').platformLiteSubscriptionPlacement)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').activityDiagnosticsPolicyDeploymentName)]",
@@ -3402,7 +3402,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('esLiteDeploymentNames').ddosHubLitePolicyDeploymentName]",
             "scope": "[variables('scopes').platformManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').ddosLiteDeploymentName)]"
             ],
@@ -3533,7 +3533,7 @@
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').ascGovPolicyDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').ddosHubLitePolicyDeploymentName)]"
             ],
-            "location": ["eastus"],
+            "location": "[eastus]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -3611,7 +3611,7 @@
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').activityDiagnosticsPolicyDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').resourceDiagnosticsPolicyDeploymentName)]"
             ],
-            "location": ["eastus"],
+            "location": "[eastus]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -3668,7 +3668,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('esLitedeploymentNames').azBackupIdentityLitePolicyDeploymentName]",
             "scope": "[variables('scopes').platformManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').platformLiteSubscriptionPlacement)]"
             ],
@@ -3698,7 +3698,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('esLitedeploymentNames').subnetNsgIdentityLitePolicyDeploymentName]",
             "scope": "[variables('scopes').platformManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').platformLiteSubscriptionPlacement)]"
@@ -3729,7 +3729,7 @@
             "apiVersion": "2020-10-01",
             "name": "[variables('esLitedeploymentNames').rdpFromInternetIdentityLitePolicyDeploymentName]",
             "scope": "[variables('scopes').platformManagementGroup]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "dependsOn": [
                 "policyCompletion",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').platformLiteSubscriptionPlacement)]"
@@ -3754,7 +3754,7 @@
             "condition": "[equals(parameters('telemetryOptOut'), 'No')]",
             "apiVersion": "2020-06-01",
             "name": "[variables('deploymentNames').pidCuaDeploymentName]",
-            "location": ["eastus"],
+            "location": "[eastus]",
             "type": "Microsoft.Resources/deployments",
             "properties": {
                 "mode": "Incremental",
