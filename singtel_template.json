@@ -277,7 +277,7 @@
         },
         "connectivityLocation": {
             "type": "string",
-            "defaultValue": [australiacentral]
+            "defaultValue": ["australiacentral"]
         },
         "enableDdoS": {
             "type": "string",
