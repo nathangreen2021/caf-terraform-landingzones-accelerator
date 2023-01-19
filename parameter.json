@@ -1,0 +1,278 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "enterpriseScaleCompanyPrefix": {
+      "value": "ngr"
+    },
+    "singlePlatformSubscriptionId": {
+      "value": "No"
+    },
+    "telemetryOptOut": {
+      "value": "No"
+    },
+    "enableLogAnalytics": {
+      "value": "Yes"
+    },
+    "retentionInDays": {
+      "value": "30"
+    },
+    "managementSubscriptionId": {
+      "value": "5fa7ae08-fa6e-4c7b-b6fc-b171c2b5aada"
+    },
+    "enableAgentHealth": {
+      "value": "Yes"
+    },
+    "enableChangeTracking": {
+      "value": "Yes"
+    },
+    "enableUpdateMgmt": {
+      "value": "Yes"
+    },
+    "enableVmInsights": {
+      "value": "Yes"
+    },
+    "enableServiceMap": {
+      "value": "Yes"
+    },
+    "enableSqlAssessment": {
+      "value": "Yes"
+    },
+    "enableSqlVulnerabilityAssessment": {
+      "value": "Yes"
+    },
+    "enableSqlAdvancedThreatProtection": {
+      "value": "Yes"
+    },
+    "enableAsc": {
+      "value": "No"
+    },
+    "emailContactAsc": {
+      "value": "No"
+    },
+    "enableAscForServers": {
+      "value": "Disabled"
+    },
+    "enableAscForOssDb": {
+      "value": "Disabled"
+    },
+    "enableAscForCosmosDbs": {
+      "value": "Disabled"
+    },
+    "enableAscForAppServices": {
+      "value": "Disabled"
+    },
+    "enableAscForStorage": {
+      "value": "Disabled"
+    },
+    "enableAscForSql": {
+      "value": "Disabled"
+    },
+    "enableAscForSqlOnVm": {
+      "value": "Disabled"
+    },
+    "enableAscForKeyVault": {
+      "value": "Disabled"
+    },
+    "enableAscForArm": {
+      "value": "Disabled"
+    },
+    "enableAscForDns": {
+      "value": "Disabled"
+    },
+    "enableAscForContainers": {
+      "value": "Disabled"
+    },
+    "enableSecuritySolution": {
+      "value": "No"
+    },
+    "enableAzOps": {
+      "value": "No"
+    },
+    "gitHubUserNameOrOrg": {
+      "value": "No"
+    },
+    "repositoryName": {
+      "value": "No"
+    },
+    "paToken": {
+      "value": "No"
+    },
+    "principalId": {
+      "value": []
+    },
+    "principalSecret": {
+      "value": "No"
+    },
+    "appId": {
+      "value": "14de9f90-a36f-4078-bee6-bea3ff06395a"
+    },
+    "azOpsSubscriptionId": {
+      "value": "5fa7ae08-fa6e-4c7b-b6fc-b171c2b5aada"
+    },
+    "connectivitySubscriptionId": {
+      "value": "e687d6e3-a70d-4d87-a89b-25647e4f5605"
+    },
+    "addressPrefix": {
+      "value": "10.100.0.0/16"
+    },
+    "connectivityLocation": {
+      "value": "australiacentral"
+    },
+    "enableDdoS": {
+      "value": "Yes"
+    },
+    "enablePrivateDnsZones": {
+      "value": "Yes"
+    },
+    "enableVpnGw": {
+      "value": "No"
+    },
+    "gwRegionalOrAz": {
+      "value": "No"
+    },
+    "gwRegionalSku": {
+      "value": "No"
+    },
+    "gwAzSku": {
+      "value": "No"
+    },
+    "vpnGateWayScaleUnit": {
+      "value": "No"
+    },
+    "subnetMaskForGw": {
+      "value": "No"
+    },
+    "enableErGw": {
+      "value": "No"
+    },
+    "erAzSku": {
+      "value": "No"
+    },
+    "erRegionalSku": {
+      "value": "No"
+    },
+    "erRegionalOrAz": {
+      "value": "No"
+    },
+    "expressRouteScaleUnit": {
+      "value": "No"
+    },
+    "enableHub": {
+      "value": "vhub"
+    },
+    "enableAzFw": {
+      "value": "Yes"
+    },
+    "enableAzFwDnsProxy": {
+      "value": "No"
+    },
+    "firewallSku": {
+      "value": "Standard"
+    },
+    "firewallZones": {
+      "value": []
+    },
+    "subnetMaskForAzFw": {
+      "value": "10.100.0.0/24"
+    },
+    "identitySubscriptionId": {
+      "value": "f1b9f0d9-79b1-4f5a-8ffb-747776804c86"
+    },
+    "denyRdpForIdentity": {
+      "value": "Yes"
+    },
+    "denySubnetWithoutNsgForIdentity": {
+      "value": "Yes"
+    },
+    "denyPipForIdentity": {
+      "value": "Yes"
+    },
+    "enableVmBackupForIdentity": {
+      "value": "Yes"
+    },
+    "identityAddressPrefix": {
+      "value": "10.110.0.0/24"
+    },
+    "corpConnectedLzSubscriptionId": {
+      "value": [
+        {
+          "subs": "f1b9f0d9-79b1-4f5a-8ffb-747776804c86",
+          "addresses": "10.110.0.0/24"
+        }
+      ]
+    },
+    "corpLzSubscriptionId": {
+      "value": []
+    },
+    "onlineLzSubscriptionId": {
+      "value": []
+    },
+    "enableLzDdoS": {
+      "value": "Yes"
+    },
+    "denyPublicEndpoints": {
+      "value": "Yes"
+    },
+    "enablePrivateDnsZonesForLzs": {
+      "value": "Yes"
+    },
+    "enableEncryptionInTransit": {
+      "value": "Yes"
+    },
+    "enableVmMonitoring": {
+      "value": "Yes"
+    },
+    "enableVmssMonitoring": {
+      "value": "Yes"
+    },
+    "enableAksPolicy": {
+      "value": "Yes"
+    },
+    "denyAksPrivileged": {
+      "value": "Yes"
+    },
+    "denyAksPrivilegedEscalation": {
+      "value": "Yes"
+    },
+    "denyHttpIngressForAks": {
+      "value": "Yes"
+    },
+    "denyDatabricksPip": {
+      "value": "Yes"
+    },
+    "denyDatabricksVnet": {
+      "value": "Yes"
+    },
+    "denyDatabricksSku": {
+      "value": "Yes"
+    },
+    "enableVmBackup": {
+      "value": "Yes"
+    },
+    "denyRdp": {
+      "value": "Yes"
+    },
+    "denySubnetWithoutNsg": {
+      "value": "Yes"
+    },
+    "denyIpForwarding": {
+      "value": "Yes"
+    },
+    "enableSqlEncryption": {
+      "value": "Yes"
+    },
+    "enableSqlAudit": {
+      "value": "Yes"
+    },
+    "enableStorageHttps": {
+      "value": "Yes"
+    },
+    "delayCount": {
+      "value": 1
+    },
+    "currentDateTimeUtcNow": {
+      "value": "No"
+    }
+  }
+}
