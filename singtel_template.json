@@ -739,7 +739,7 @@
             "govMdfcPolicyAssignment": "[uri(deployment().properties.templateLink.uri, 'managementGroupTemplates/policyAssignments/gov/fairfaxDINE-MDFCConfigPolicyAssignment.json')]"
         },
         // Declaring deterministic deployment names
-        "deploymentSuffix": "[concat('-', "eastus", '-', guid(parameters('enterpriseScaleCompanyPrefix'), parameters('currentDateTimeUtcNow')))]",
+        "deploymentSuffix": "[concat('-', deployment().location, '-', guid(parameters('enterpriseScaleCompanyPrefix'), parameters('currentDateTimeUtcNow')))]",
         "deploymentNames": {
             "mgmtGroupDeploymentName": "[take(concat('alz-Mgs', variables('deploymentSuffix')), 64)]",
             "mgmtSubscriptionPlacement": "[take(concat('alz-MgmtSub', variables('deploymentSuffix')), 64)]",
