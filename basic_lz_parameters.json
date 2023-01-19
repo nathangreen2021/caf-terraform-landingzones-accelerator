@@ -1,0 +1,161 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "enterpriseScaleCompanyPrefix": {
+      "value": "mgmt"
+    },
+    "platformSubscriptionId": {
+      "value": "5fa7ae08-fa6e-4c7b-b6fc-b171c2b5aada"
+    },
+    "onlineLzSubscriptionId": {
+      "value": []
+    },
+    "corpLzSubscriptionId": {
+      "value": [
+        "e687d6e3-a70d-4d87-a89b-25647e4f5605"
+      ]
+    },
+    "enableLogAnalytics": {
+      "value": "Yes"
+    },
+    "retentionInDays": {
+      "value": "30"
+    },
+    "enableAsc": {
+      "value": "Standard"
+    },
+    "emailContactAsc": {
+      "value": "No"
+    },
+    "enableAksPolicy": {
+      "value": "No"
+    },
+    "denyAksPrivileged": {
+      "value": "No"
+    },
+    "denyAksPrivilegedEscalation": {
+      "value": "No"
+    },
+    "denyHttpIngressForAks": {
+      "value": "No"
+    },
+    "enableArcMonitoring": {
+      "value": "No"
+    },
+    "enableVmMonitoring": {
+      "value": "Yes"
+    },
+    "enableVmssMonitoring": {
+      "value": "No"
+    },
+    "enableSecuritySolution": {
+      "value": "Yes"
+    },
+    "enableEncryptionInTransit": {
+      "value": "Yes"
+    },
+    "enableAgentHealth": {
+      "value": "Yes"
+    },
+    "enableChangeTracking": {
+      "value": "Yes"
+    },
+    "enableUpdateMgmt": {
+      "value": "Yes"
+    },
+    "enableAntiMalware": {
+      "value": "Yes"
+    },
+    "enableVmInsights": {
+      "value": "Yes"
+    },
+    "enableServiceMap": {
+      "value": "Yes"
+    },
+    "enableSqlAssessment": {
+      "value": "Yes"
+    },
+    "enableSqlAudit": {
+      "value": "Yes"
+    },
+    "enableSqlEncryption": {
+      "value": "Yes"
+    },
+    "enableVmBackup": {
+      "value": "Yes"
+    },
+    "denyRdp": {
+      "value": "Yes"
+    },
+    "denyPublicEndpoints": {
+      "value": "Yes"
+    },
+    "enableStorageHttps": {
+      "value": "Yes"
+    },
+    "enableLzDdoS": {
+      "value": "No"
+    },
+    "denyIpForwarding": {
+      "value": "Yes"
+    },
+    "denySubnetWithoutNsg": {
+      "value": "Yes"
+    },
+    "addressPrefix": {
+      "value": "10.100.0.0/16"
+    },
+    "enableVpnGw": {
+      "value": "Yes"
+    },
+    "enableErGw": {
+      "value": "No"
+    },
+    "location": {
+      "value": "southeastasia"
+    },
+    "enableHub": {
+      "value": "Yes"
+    },
+    "enableAzFw": {
+      "value": "No"
+    },
+    "vpnGwType": {
+      "value": "RouteBased"
+    },
+    "enableAzFwDnsProxy": {
+      "value": "No"
+    },
+    "enableDdoS": {
+      "value": "No"
+    },
+    "subnetMaskForAzFw": {
+      "value": "No"
+    },
+    "subnetMaskForGw": {
+      "value": "10.100.1.0/24"
+    },
+    "gwRegionalOrAz": {
+      "value": "Zone"
+    },
+    "gwAzSku": {
+      "value": "VpnGw2AZ"
+    },
+    "gwRegionalSku": {
+      "value": "No"
+    },
+    "erRegionalOrAz": {
+      "value": "No"
+    },
+    "erAzSku": {
+      "value": "No"
+    },
+    "erRegionalSku": {
+      "value": "No"
+    },
+    "firewallZones": {
+      "value": []
+    }
+  }
+}
