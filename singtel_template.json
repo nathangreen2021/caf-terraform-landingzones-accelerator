@@ -277,7 +277,7 @@
         },
         "connectivityLocation": {
             "type": "string",
-            "defaultValue": "[eastus]"
+            "defaultValue": "eastus"
         },
         "enableDdoS": {
             "type": "string",
