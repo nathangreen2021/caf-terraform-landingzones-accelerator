@@ -3442,7 +3442,7 @@
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').ascGovPolicyDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').ddosHubLitePolicyDeploymentName)]"
             ],
-            "location": "["eastus"]",
+            "location": "[eastus]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
