@@ -799,7 +799,7 @@
             "identityPeeringDeploymentName": "[take(concat('alz-IDPeering', variables('deploymentSuffix')), 64)]",
             "identityVwanPeeringDeploymentName": "[take(concat('alz-IDVwanPeering', variables('deploymentSuffix')), 64)]",
             "corpConnectedLzVwanSubs": "[take(concat('alz-CorpConnLzsVwan', variables('deploymentSuffix')), 50)]",
-            "pidCuaDeploymentName": "[take(concat('pid-', variables('cuaid'), '-' , uniqueString("eastus", parameters('enterpriseScaleCompanyPrefix'), parameters('currentDateTimeUtcNow'))), 64)]"
+            "pidCuaDeploymentName": "[take(concat('pid-', variables('cuaid'), '-' , uniqueString(deployment().location, parameters('enterpriseScaleCompanyPrefix'), parameters('currentDateTimeUtcNow'))), 64)]"
         },
         "esLiteDeploymentNames": {
             "mgmtGroupLiteDeploymentName": "[take(concat('alz-MgsLite', variables('deploymentSuffix')), 64)]",
